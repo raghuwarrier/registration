@@ -1,0 +1,20 @@
+{
+   "id":"123456.12",
+   "milestones":[
+      {
+         "name":"Floor",
+         "status":"In Progress",        
+         "date":"12-01-2016"
+      },
+      {
+         "name":"Floor",
+         "status":"Done",
+         "date":"12-04-2016"
+      },
+      {
+         "name":"Floor",
+         "status":"Accepted",
+         "date":"13-04-2016"
+      }
+   ]
+}

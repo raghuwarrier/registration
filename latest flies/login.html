@@ -1,0 +1,65 @@
+<!--
+<section class="pwsSection">
+  <form name="loginForm"
+        ng-submit="logon()"
+        novalidate ng-init="loginForm.$setPristine()">
+
+    <div class="textintro">
+      <p class="signUpHeader">SIGN UP <span class="bold">FOR PWS</span>.</p>
+
+      <p class="signUpSubHeader">IT ONLY TAKES A MOMENT.</p>
+      <p ng-show="messages">
+      <ul class="error">
+        <li ng-repeat="message in messages">
+          {{ message }}
+        </li>
+      </ul>
+      </p>
+
+    </div>
+
+    <div class="loginBox">
+      <p class="addPadding bold">Please enter your details.</p>
+      <input type="userId" name="userId" placeholder="userId"
+             ng-model="user.userId" ng-required="true" class="addPadding">
+      <p class="error validationerror"
+         ng-show="loginForm.email.$invalid && loginForm.email.$touched">
+        Must be a valid email</p>
+
+      <input type="password" name="password" placeholder="New password"
+             ng-model="user.password" ng-required="true" class="addPadding">
+      <p class="error"
+         ng-show="loginForm.password.$invalid && loginForm.email.$touched">
+        Password is required</p>
+
+      <p><input type="image"  class="btn" src="images/Next.png"
+                ng-disabled="loginForm.$invalid || loginForm.$submitted "></p>
+      <p>or <a href="#/login">login</a></p>
+    </div>
+
+  </form>
+</section>
+-->
+<form name="loginForm"
+        ng-submit="logon()"
+        novalidate ng-init="loginForm.$setPristine()">
+<div class="form">
+  <div class="forceColor"></div>
+  <div class="topbar">
+      <div ng-show="messages" class="alert alert-danger">
+      <ul>
+        <li ng-repeat="message in messages">
+          {{ message }}
+        </li>
+      </ul>
+      </div>
+    <div class="spanColor"></div>
+    <input type="text" class="input" name="userName" ng-model="user.userName" ng-required="true" placeholder="User Name"/>
+    <div class="alert alert-danger"
+         ng-show="loginForm.userName.$invalid && loginForm.userName.$touched">
+        User name is required</div>
+    <input type="password" class="input" name="password" ng-model="user.password" ng-required="true" placeholder="Password"/>
+  </div>
+  <button class="submit" id="submit" >Login</button>
+</div>
+</form>

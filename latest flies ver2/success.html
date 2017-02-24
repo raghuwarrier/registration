@@ -1,0 +1,80 @@
+<div class="container" ng-controller="SuccessController" >
+
+<div style="margin-top:100px;background-color:lightgrey;font-size:medium;padding:0px 10px 10px 10px;">
+<h3>Account Overview</h3>
+  <br/> 
+    <tr>Account Number : {{accountNumber}}</tr><br/>
+    <br/>
+    <tr>Account Balance : {{balance}}</tr>
+</div>
+  
+ <!-- Modal -->
+ <script type="text/ng-template" id="milestoneDetails.html">
+ <div class="modal fade" id="myModal" role="dialog">
+   <div class="modal-dialog">
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">{{title}}</h4>
+       </div>
+       <div class="modal-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Status</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="milestoneDetail in milestoneDetails">
+              <td> {{ milestoneDetail.name }}</td>
+              <td> {{ milestoneDetail.status }}</td>
+              <td> {{ milestoneDetail.date }}</td>
+            </tr>
+          </tbody>
+        </table> 
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+     </div>
+     
+   </div>
+ </div>
+</script>
+ 
+<div class="table-responsive" style="margin-top:50px;background-color:lightgrey;font-size:medium;padding:0px 10px 10px 10px;">
+<h2>Milestone Overview</h2>
+  <br/>
+<table class="table">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Amount</th>
+      <th style="text-align:center;">Action</th>
+      <th style="text-align:center;">Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="milestone in milestones">
+      <td>{{ milestone.id }}</td>
+      <td> {{ milestone.name }}</td>
+      <td> {{ milestone.status }}</td>
+      <td> {{ milestone.amount }}</td>
+      <td style="text-align:center;">
+          <span ng-repeat="currAction in milestone.action">
+           <button type="button" ng-click="takeAction(milestone.id,milestone.status)" class="btn btn-link">{{currAction}}</button>
+          </span>
+      </td>
+      <td style="text-align:center;">
+          <span class="glyphicon glyphicon-plus-sign" data-toggle="modal" data-target="#myModal" ng-click="show(milestone.id)"></span>
+          <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button></td>-->
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
